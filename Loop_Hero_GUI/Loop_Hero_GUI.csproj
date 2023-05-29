@@ -10,10 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Bacjground.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="Resources\Icon.ico" />
   </ItemGroup>
 
@@ -22,10 +18,6 @@
     <Folder Include="Properties\entity\" />
     <Folder Include="Properties\maps\" />
     <Folder Include="Properties\tiles\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Bacjground.jpg" />
   </ItemGroup>
 
   <ItemGroup>

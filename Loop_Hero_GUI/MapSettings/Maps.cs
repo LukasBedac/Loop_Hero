@@ -7,27 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Loop_Hero_GUI
+namespace Loop_Hero_GUI.MapSettings
 {
     internal class Maps
     {
-        
-        private const int ROWS = 8;
-        
-        private const int COLUMNS = 16;
-        
-        public Maps() 
-        { 
+
+        public const int ROWS = 8;
+
+        public const int COLUMNS = 16;
+
+        public Maps()
+        {
             RandomGen = new Random();
             MapBool = new bool[ROWS, COLUMNS];
             MapInt = new int[ROWS, COLUMNS];
             GenerateMap();
         }
-        
+
         public Random RandomGen { get; init; }
-        
+
         public bool[,] MapBool { get; set; }
-        
+
         public int[,] MapInt { get; set; }
 
         public void GenerateMap()
@@ -63,9 +63,10 @@ namespace Loop_Hero_GUI
                     map?.Close();
 
                 }
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
-                Console.WriteLine($"{ex.Message}, error while reading input map file!" );
+                Console.WriteLine($"{ex.Message}, error while reading input map file!");
             }
         }
 
