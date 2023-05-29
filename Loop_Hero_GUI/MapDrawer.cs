@@ -11,7 +11,7 @@ namespace Loop_Hero_GUI
     {
         public MapDrawer() 
         {
-            Thread.Sleep(1000);
+            
         }
     }
 }
