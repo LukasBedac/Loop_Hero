@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Media;
+using System.Windows.Navigation;
 using Loop_Hero_GUI.Tiles;
 
 namespace Loop_Hero_GUI.MapSettings
@@ -18,22 +19,29 @@ namespace Loop_Hero_GUI.MapSettings
 
         private bool _mapEnd;
 
+        private int _tileCOunt;
+
         public MapDrawer()
         {
-            _mapEnd = false;
             _mapGenerator = new();
             InGameMap = new Tile[Maps.ROWS, Maps.COLUMNS];
             RandomGen = new Random();
+            StarterTile = new int[2];
         }
 
         public Random RandomGen { get; init; }
 
         public Tile[,] InGameMap { get; init; }
 
-        public int[]? StarterTile { get; set; }
-        public List<Tile>? CalculatedMap { get; set; }
+        public int[] StarterTile { get; set; }
+        public List<Tile?>? CalculatedMap { get; set; }
 
-        public void SetCampfire()
+        public int[]? GetStarterTile()
+        {
+            return StarterTile;
+        }
+
+        public void SetCampfire(int v)
         {
             int row = RandomGen.Next(Maps.ROWS);
             int col = RandomGen.Next(Maps.COLUMNS);
@@ -49,8 +57,60 @@ namespace Loop_Hero_GUI.MapSettings
                 InGameMap[row, col].PositionY = row * TILE_SIZE;
                 InGameMap[row, col].UsedCard = true;
                 CalculatedMap?.Add(InGameMap[row, col]);
+                StarterTile[0] = row * TILE_SIZE;
+                StarterTile[1] = col * TILE_SIZE;
+                GenerateCalculatedMap();
             }
         }
 
-    }
+        private void GenerateCalculatedMap()
+        {
+            int index = 0;
+            _mapEnd = false;
+            while (!_mapEnd)
+            {
+                if ()
+                {
+                    index++;
+                } else if ()
+                {
+                    index++;
+                } else if ()
+                {
+                    index++;
+                } else if ()
+                {
+                    index++;
+                }
+            }
+        }
+        private bool TileCheck(int row, int col, int index)
+        {
+            Tile temporaryTile = null;
+            Tile? start = CalculatedMap?[index];
+            try
+            {
+                if (InGameMap[start.Row + row, start.Column + col] != null)
+                {
+                    temporaryTile = InGameMap[start.Row + row, start.Column + col];
+                    if (temporaryTile == CalculatedMap?[0] && CalculatedMap.Count == _tileCOunt)
+                    {
+                        _mapEnd = true;
+                    }
+                }
+                var tile = CalculatedMap?.Contains(temporaryTile);
+                if (tile != null)
+                {
+                    CalculatedMap?.Add(temporaryTile);
+                    return true;
+                } else
+                {
+                    return false;
+                }
+            } catch (IndexOutOfRangeException)
+            {
+                return false;
+            }
+        }
+    } 
 }

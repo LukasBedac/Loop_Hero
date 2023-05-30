@@ -18,5 +18,6 @@ namespace Loop_Hero_GUI.Tiles
 
         public Image Image { get; set; }
 
+        public Card UsedCard { get; set; }
     }
 }

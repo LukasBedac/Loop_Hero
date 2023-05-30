@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Loop_Hero_GUI.Cards
+namespace Loop_Hero_GUI.Entity
 {
-    public abstract class Card
+    public interface IEntity
     {
 
     }
