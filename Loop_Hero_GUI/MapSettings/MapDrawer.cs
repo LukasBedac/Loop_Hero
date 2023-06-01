@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -140,39 +141,78 @@ namespace Loop_Hero_GUI.MapSettings
             {
                 for (int col = 0; col < InGameMap.GetLength(1); col++) 
                 {
-                    if (InGameMap[row, col] != null)
-                    {
-                        InGameMap[row, col].DrawImage(dc);
-                    }
-
+                    InGameMap[row, col]?.DrawImage(dc);
                 }
             }
         }
 
         public void ClickedCardDraw(DrawingContext dc)
         {
-            //TODO 1.0 
+            try
+            {
+                BitmapImage border = new(new Uri("Properties/images/Zvyraznenie.png"));
+                BitmapImage redBorder = new(new Uri("Properties/images/ZvyraznenieC.png"));
+                if (CalculatedMap != null)
+                {
+                    foreach (Tile? tile in CalculatedMap)
+                    {
+                        if (tile != null)
+                        {
+                            if (!tile.IsCardUsed)
+                            {
+                                dc.DrawImage(border, new Rect(tile.PositionX, tile.PositionY,
+                                    TILE_SIZE, TILE_SIZE));
+                            }
+                            else
+                            {
+                                dc.DrawImage(redBorder, new Rect(tile.PositionX, tile.PositionY,
+                                    TILE_SIZE, TILE_SIZE));
+                            }
+                        }
+                        
+                    }
+                }
+                
+            } catch (IOException e)
+            {
+                throw new IOException(e.Message, e.InnerException);
+            }
         }
 
         public bool ForwardClickedCardToTile(Card card, int x, int y)
         {
-            return true;
-            //TODO 1.1
+            if (CalculatedMap != null)
+            {
+                foreach (Tile? tile in CalculatedMap)
+                {
+                    if (tile != null && x >= tile.PositionX && x < tile.PositionX + TILE_SIZE && y >= tile.PositionY && 
+                        y < tile.PositionY + TILE_SIZE
+                        && !tile.IsCardUsed)
+                    {
+                        tile.TileUsedCard(card);
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
-        public void NovyDen(bool novyDen)
+        public void NewDay(bool newDay)
         {
             int NumberOfGeneratedEnemies = 0;
             for (int i = 0; i < CalculatedMap?.Count; i++)
             {
                 Tile? tile = CalculatedMap[i];
-                if (NumberOfGeneratedEnemies < 6)
+                if (tile != null)
                 {
-                    //TODO 1.2 NumberOfGeneratedEnemies += tile.novyDen(novyDen);
-                }
-                else
-                {
-                    //TODO 1.2.1 tile.updateEnemies(novyDen);
+                    if (NumberOfGeneratedEnemies < 6)
+                    {
+                        NumberOfGeneratedEnemies += tile.NewDay(newDay);
+                    }
+                    else
+                    {
+                        tile.UpdateEnemies(newDay);
+                    }
                 }
             }
         }

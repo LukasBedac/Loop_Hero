@@ -18,29 +18,27 @@ namespace Loop_Hero_GUI.Tiles
         {
             SetImage();
         }
-        public int PositionX { get; set; }
-        public int PositionY { get; set; }
+        public virtual int PositionX { get; set; }
+        public virtual int PositionY { get; set; }
 
-        public int Row { get; set; }
-        public int Column { get; set; }
+        public virtual int Row { get; set; }
+        public virtual int Column { get; set; }
 
-        public Image? Image { get; set; }
+        public virtual Card? UsedCard { get; set; }
 
-        public Card? UsedCard { get; set; }
+        public virtual bool IsCardUsed { get; set; }
 
-        public bool IsCardUsed { get; set; }
-
-        public string? TileName { get; set; }
+        public virtual string? TileName { get; set; }
 
         public virtual void SetImage() => _image = new BitmapImage(new Uri("/Properties/tiles/RoadTile.png"));
-        public void DrawImage(DrawingContext dc)
+        public virtual void DrawImage(DrawingContext dc)
         {
             dc.DrawImage(_image, new Rect(PositionX, PositionY, TILE_SIZE, TILE_SIZE));
         }
 
-        public abstract int NovyDen(bool novyDen);
+        public abstract int NewDay(bool newDay);
 
-        public abstract void UpdateEnemies(bool novyDen);
+        public abstract void UpdateEnemies(bool newDay);
 
         public abstract void TileUsedCard(Card card);
 

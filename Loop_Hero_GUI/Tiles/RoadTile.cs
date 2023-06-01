@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace Loop_Hero_GUI.Tiles
@@ -13,30 +14,95 @@ namespace Loop_Hero_GUI.Tiles
     {
         private List<IEntity>? _enemies;
         private BitmapImage? _image;
+        private Random? _random;
 
         public RoadTile(int row, int column)
         {
-
+            base.Row = row;
+            base.Column = column;
+            SetImage();
+            PositionX = column * TILE_SIZE;
+            PositionY = row * TILE_SIZE;
+            _enemies = new List<IEntity>();
+            _random = new Random();
+            if (_random.NextDouble() > 0.85)
+            {
+                //TODO 2.1 _enemies.Add(new Slime());
+            }
         }
 
-        public override int NovyDen(bool novyDen)
-        {
-            throw new NotImplementedException();
-        }
+        public override int PositionX { get; set; }
+        public override int PositionY { get; set; }
 
-        public override void TileUsedCard(Card card)
+        public override int Row { get; set; }
+        public override int Column { get; set; }
+
+        public override Card? UsedCard { get; set; }
+
+        public override bool IsCardUsed { get; set; }
+
+        public override string? TileName { get; set; }
+
+        public override int NewDay(bool novyDen)
         {
-            throw new NotImplementedException();
+            
+            if (UsedCard != null && novyDen)
+            {
+                //TODO 2.0 _enemies = UsedCard.NovyDen(_enemies);
+            }
+            else
+            {
+                if (novyDen && _random?.NextDouble() > 0.7 && _enemies?.Count < 4)
+                {
+                    //TODO 2.1 _enemies.Add(new Slime());
+                    UpdateEnemies(novyDen);
+                    return 1;
+                }
+            }
+            return 0;
         }
 
         public override void UpdateEnemies(bool novyDen)
         {
-            throw new NotImplementedException();
+            if (novyDen && _enemies != null)
+            {
+                foreach (IEntity enemy in _enemies)
+                {
+                    //TODO 2.2 enemies HP and DMG
+                    //enemy.SetHp(10);
+                    //enemy.SetDMG(1);
+                }
+            }
         }
 
-        public override void SetImage()
+        public override void SetImage() => _image = new BitmapImage(new Uri("/Properties/tiles/RoadTile.png"));
+        
+        public override void DrawImage(DrawingContext dc)
         {
-            base.SetImage();
+            base.DrawImage(dc);
+            if (UsedCard != null)
+            {
+                //TODO 2.3 UsedCard.DrawTileImage(dc, PositionX, PositionY, TILE_SIZE, TILE_SIZE);
+            }
+            if (_enemies != null && _enemies.Count > 0)
+            {
+                int i = 0;
+                foreach (IEntity enemy in _enemies)
+                {
+                    if (i == 2)
+                    {
+                        //TODO 2.4 enemy.DrawImage(dc, PositionX + (i * 10), PositionY + (i * 25));
+                        return;
+                    }
+                    //enemy.DrawImage(dc, PositionX + (i * 30), PositionY);
+                    i++;
+                }
+            }
+        }
+        public override void TileUsedCard(Card card)
+        {
+            UsedCard = card;
+            IsCardUsed = true;
         }
     }
 }
