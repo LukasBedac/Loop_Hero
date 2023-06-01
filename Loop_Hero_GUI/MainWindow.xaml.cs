@@ -40,6 +40,12 @@ namespace Loop_Hero_GUI
                 
             }
         }
+
+        protected override void OnRender(DrawingContext drawingContext)
+        {
+
+            base.OnRender(drawingContext);
+        }
         private void ExitBtn_Click(object sender, RoutedEventArgs e)
         {
             Menu menu = new();

@@ -6,18 +6,36 @@
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
     <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <StartupObject>Loop_Hero_GUI.App</StartupObject>
     <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Properties\tiles\CampFire.png" />
+    <None Remove="Properties\tiles\Cemetery.png" />
+    <None Remove="Properties\tiles\Forest.png" />
+    <None Remove="Properties\tiles\RoadTile.png" />
+    <None Remove="Properties\tiles\Treasure.png" />
+    <None Remove="Resources\Bacjground.jpg" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Resources\Icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Properties\tiles\CampFire.png" />
+    <Resource Include="Properties\tiles\Cemetery.png" />
+    <Resource Include="Properties\tiles\Forest.png" />
+    <Resource Include="Properties\tiles\RoadTile.png" />
+    <Resource Include="Properties\tiles\Treasure.png" />
+    <Resource Include="Resources\Bacjground.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Properties\cards\" />
     <Folder Include="Properties\entity\" />
     <Folder Include="Properties\maps\" />
-    <Folder Include="Properties\tiles\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,6 +44,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +56,13 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -3,12 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Loop_Hero_GUI"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1200" Background="#1E2019">
     <Grid>
         <ProgressBar x:Name="_dayProgressBar" HorizontalAlignment="Left" Height="15" Margin="10,10,0,0" VerticalAlignment="Top" Width="200" Foreground="#587596"/>
-        <Border BorderBrush="#587596" BorderThickness="1" Margin="0,0,400,300"/>
+        <Border BorderBrush="#587596" BorderThickness="1" Margin="0,0,400,300">
+            <Canvas Name="Canvas" Width="800" Height="450" Margin="-1,33,-1,-1"/>
+        </Border>
         <Border BorderBrush="#587596" BorderThickness="1" Margin="783,0,0,300"/>
         <Border BorderBrush="#587596" BorderThickness="1" Margin="0,462,400,0"/>
         <Border BorderBrush="#587596" BorderThickness="1" Margin="783,462,0,0">
