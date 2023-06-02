@@ -17,8 +17,6 @@ namespace Loop_Hero_GUI.Entity
 
         int Dmg { get; init; }
 
-        Item? Loot { get; set; }
-
         BitmapImage Image {  get; set; }
 
         void DrawImage(DrawingContext dc, int x, int y);

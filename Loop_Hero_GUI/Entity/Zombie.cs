@@ -4,13 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media;
+using System.Windows;
 
 namespace Loop_Hero_GUI.Entity
 {
-    public class Ghost : Loot, IEntity
+    public class Zombie : Loot, IEntity
     {
         private int _Hp;
 
@@ -20,22 +20,22 @@ namespace Loop_Hero_GUI.Entity
 
         private BitmapImage _Image;
 
-        public Ghost() 
+        public Zombie()
         {
-            _Hp = 120;
-            _Dmg = 9;
-            _Image = new BitmapImage(new Uri("Properties/entity/duch.png"));
+            _Hp = 160;
+            _Dmg = 7;
+            _Image = new BitmapImage(new Uri("Properties/entity/zombie.png"));
             _Item = base.GenerateItem();
         }
 
         public int Hp { get => _Hp; init => _Hp += value; }
-        
-        public int Dmg { get =>_Dmg; init => _Dmg += value; }
-        
-        public string Name { get => "Ghost"; }
-        
+
+        public int Dmg { get => _Dmg; init => _Dmg += value; }
+
+        public string Name { get => "Zombie"; }
+
         public Item? Loot { get => _Item; set => _Item = value; }
-        
+
         public BitmapImage Image { get => _Image; set => _Image = value; }
 
 

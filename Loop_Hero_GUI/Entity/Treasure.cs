@@ -10,7 +10,7 @@ using System.Windows.Media.Imaging;
 
 namespace Loop_Hero_GUI.Entity
 {
-    public class Ghost : Loot, IEntity
+    public class Treasure : Loot, IEntity
     {
         private int _Hp;
 
@@ -20,28 +20,28 @@ namespace Loop_Hero_GUI.Entity
 
         private BitmapImage _Image;
 
-        public Ghost() 
+        public Treasure()
         {
-            _Hp = 120;
-            _Dmg = 9;
-            _Image = new BitmapImage(new Uri("Properties/entity/duch.png"));
+            _Hp = 30;
+            _Dmg = 17;
+            _Image = new BitmapImage(new Uri("Properties/entity/chest.png"));
             _Item = base.GenerateItem();
         }
 
         public int Hp { get => _Hp; init => _Hp += value; }
-        
-        public int Dmg { get =>_Dmg; init => _Dmg += value; }
-        
-        public string Name { get => "Ghost"; }
-        
+
+        public int Dmg { get => _Dmg; init => _Dmg += value; }
+
+        public string Name { get => "Treasure Chest"; }
+
         public Item? Loot { get => _Item; set => _Item = value; }
-        
+
         public BitmapImage Image { get => _Image; set => _Image = value; }
 
 
         public void DrawImage(DrawingContext dc, int x, int y)
         {
-            dc.DrawImage(_Image, new Rect(x, y, 40, 40));
+            dc.DrawImage(_Image, new Rect(x + 10, y + 10, 40, 40));
         }
     }
 }
