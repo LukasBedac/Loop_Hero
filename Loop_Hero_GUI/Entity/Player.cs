@@ -36,7 +36,7 @@ namespace Loop_Hero_GUI.Entity
             _Dmg = 15;
             PositionX = x;
             PositionY = y;
-            _image = new BitmapImage(new Uri("player.png"));
+            _image = new BitmapImage(new Uri("../../../Properties/entity/player.png", UriKind.Relative));
             _cards = new List<Card>();
             _items = new List<Item>();
             Movement = true;
@@ -64,7 +64,7 @@ namespace Loop_Hero_GUI.Entity
         #endregion Properties
         public void DrawImage(DrawingContext dc, int x, int y)
         {
-            dc.DrawImage(_image, new System.Windows.Rect(x, y, 48, 48));
+            dc.DrawImage(_image, new System.Windows.Rect(x - 90, y - 90, 48, 48));
             if (_cards != null )
             {
                 foreach (Card card in _cards)

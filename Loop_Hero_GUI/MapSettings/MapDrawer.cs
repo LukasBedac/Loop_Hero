@@ -28,12 +28,12 @@ namespace Loop_Hero_GUI.MapSettings
 
         public MapDrawer()
         {
-            _mapGenerator = new();
-            InGameMap = new Tile[Maps.ROWS, Maps.COLUMNS];
             RandomGen = new Random();
-            StarterTile = new int[2];
             CalculatedMap = new();
-            bool[,] map= _mapGenerator.MapBool;
+            _mapGenerator = new();
+            bool[,] map = _mapGenerator.MapBool;
+            InGameMap = new Tile[Maps.ROWS, Maps.COLUMNS];
+            StarterTile = new int[2];
             FillMap(map);
             SetCampfire();
         }
@@ -57,8 +57,8 @@ namespace Loop_Hero_GUI.MapSettings
             if (InGameMap[row, col] != null)
             {
                 InGameMap[row, col] = new CampFire(row, col);
-                InGameMap[row, col].PositionX = col * TILE_SIZE;
-                InGameMap[row, col].PositionY = row * TILE_SIZE;
+                InGameMap[row, col].PositionX = col * TILE_SIZE - 90;
+                InGameMap[row, col].PositionY = row * TILE_SIZE - 90;
                 InGameMap[row, col].IsCardUsed = true;
                 CalculatedMap?.Add(InGameMap[row, col]);
                 StarterTile[0] = row * TILE_SIZE;
@@ -94,27 +94,29 @@ namespace Loop_Hero_GUI.MapSettings
             Tile? start = CalculatedMap?[index];
             try
             {
-                if (InGameMap[start!.Row + row, start.Column + col] != null)
+                if (start != null && InGameMap[start.Row + row, start.Column + col] != null)
                 {
                     temporaryTile = InGameMap[start.Row + row, start.Column + col];
                     if (temporaryTile == CalculatedMap?[0] && CalculatedMap.Count == _tileCount)
                     {
                         _mapEnd = true;
                     }
+                    if (CalculatedMap != null && !CalculatedMap.Contains(temporaryTile))
+                    {
+                        CalculatedMap?.Add(temporaryTile);
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
-                var tile = CalculatedMap?.Contains(temporaryTile);
-                if (tile != null)
-                {
-                    CalculatedMap?.Add(temporaryTile);
-                    return true;
-                } else
-                {
-                    return false;
-                }
+                
             } catch (IndexOutOfRangeException)
             {
                 return false;
             }
+            return false;
         }
         public void FillMap(bool[,] map)
         {
@@ -123,11 +125,11 @@ namespace Loop_Hero_GUI.MapSettings
             { 
                 for (int col = 0; col < map.GetLength(1); col++)
                 {
-                    if (!map[row, col])
+                    if (map[row, col])
                     {
                         InGameMap[row, col] = new RoadTile(row, col);
-                        InGameMap[row, col].PositionX = col * TILE_SIZE;
-                        InGameMap[row, col].PositionY = row * TILE_SIZE;
+                        InGameMap[row, col].PositionX = col * TILE_SIZE - 90;
+                        InGameMap[row, col].PositionY = row * TILE_SIZE - 90;
                         InGameMap[row, col].IsCardUsed = false;
                         _tileCount++;
                     }
@@ -149,8 +151,8 @@ namespace Loop_Hero_GUI.MapSettings
         {
             try
             {
-                BitmapImage border = new(new Uri("Properties/images/Zvyraznenie.png"));
-                BitmapImage redBorder = new(new Uri("Properties/images/ZvyraznenieC.png"));
+                BitmapImage border = new(new Uri("../../../Properties/images/Zvyraznenie.png"));
+                BitmapImage redBorder = new(new Uri("../../../Properties/images/ZvyraznenieC.png"));
                 if (CalculatedMap != null)
                 {
                     foreach (Tile? tile in CalculatedMap)

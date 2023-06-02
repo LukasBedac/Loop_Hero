@@ -22,7 +22,7 @@ namespace Loop_Hero_GUI.Entity
         {
             _Hp = 60;
             _Dmg = 4;
-            _Image = new BitmapImage(new Uri("slime.png", UriKind.Relative));
+            _Image = new BitmapImage(new Uri("../../../Properties/entity/slime.png", UriKind.Relative));
             
         }
 

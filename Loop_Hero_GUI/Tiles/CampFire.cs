@@ -37,7 +37,7 @@ namespace Loop_Hero_GUI.Tiles
 
         public override void SetImage()
         {
-            _image = new BitmapImage(new Uri("CampFire.png", UriKind.Relative));
+            _image = new BitmapImage(new Uri("../../../Properties/tiles/CampFire.png", UriKind.Relative));
         }
 
         public override void DrawImage(DrawingContext dc)

@@ -23,16 +23,23 @@
     <None Remove="Properties\entity\zombie.png" />
     <None Remove="Properties\images\Zvyraznenie.png" />
     <None Remove="Properties\images\ZvyraznenieC.png" />
+    <None Remove="Properties\maps\Mapa1.txt" />
+    <None Remove="Properties\maps\Mapa2.txt" />
     <None Remove="Properties\tiles\CampFire.png" />
     <None Remove="Properties\tiles\Cemetery.png" />
     <None Remove="Properties\tiles\Forest.png" />
     <None Remove="Properties\tiles\RoadTile.png" />
     <None Remove="Properties\tiles\Treasure.png" />
     <None Remove="Resources\Bacjground.jpg" />
+    <None Remove="Resources\CampFire.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Resources\Icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Properties\maps\Mapa2.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -48,6 +55,7 @@
     <Resource Include="Properties\entity\zombie.png" />
     <Resource Include="Properties\images\Zvyraznenie.png" />
     <Resource Include="Properties\images\ZvyraznenieC.png" />
+    <Resource Include="Properties\maps\Mapa1.txt" />
     <Resource Include="Properties\tiles\CampFire.png" />
     <Resource Include="Properties\tiles\Cemetery.png" />
     <Resource Include="Properties\tiles\Forest.png" />
@@ -56,10 +64,7 @@
     </Resource>
     <Resource Include="Properties\tiles\Treasure.png" />
     <Resource Include="Resources\Bacjground.jpg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Properties\maps\" />
+    <Resource Include="Resources\CampFire.png" />
   </ItemGroup>
 
   <ItemGroup>

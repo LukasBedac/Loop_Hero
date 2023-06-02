@@ -54,8 +54,8 @@ namespace Loop_Hero_GUI.Cards
 
         public override void SetImage()
         {
-            _image = new BitmapImage(new Uri("CemeteryCard.png"));
-            _tileImage = new BitmapImage(new Uri("Cemetery.png"));
+            _image = new BitmapImage(new Uri("../../../Properties/cards/CemeteryCard.png", UriKind.Relative));
+            _tileImage = new BitmapImage(new Uri("../../../Properties/tiles/Cemetery.png", UriKind.Relative));
         }
     }
 }

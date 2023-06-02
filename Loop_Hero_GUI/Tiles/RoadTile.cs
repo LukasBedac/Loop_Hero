@@ -20,7 +20,7 @@ namespace Loop_Hero_GUI.Tiles
         {
             base.Row = row;
             base.Column = column;
-            SetImage();
+            this.SetImage();
             PositionX = column * TILE_SIZE;
             PositionY = row * TILE_SIZE;
             _enemies = new List<IEntity>();
@@ -33,9 +33,6 @@ namespace Loop_Hero_GUI.Tiles
 
         public override int PositionX { get; set; }
         public override int PositionY { get; set; }
-
-        public override int Row { get; set; }
-        public override int Column { get; set; }
 
         public override Card? UsedCard { get; set; }
 
@@ -76,7 +73,7 @@ namespace Loop_Hero_GUI.Tiles
             }
         }
 
-        public override void SetImage() => _image = new BitmapImage(new Uri("tiles/RoadTile.png", UriKind.Relative));
+        public override void SetImage() => _image = new BitmapImage(new Uri("../../../Properties/tiles/RoadTile.png", UriKind.Relative));
         
         public override void DrawImage(DrawingContext dc)
         {

@@ -22,18 +22,34 @@ namespace Loop_Hero_GUI
     public partial class MainWindow : Window
     {
         private MainGame? _mainGame;
+
+        private int _progressBarValue;
         public MainWindow()
         {
             InitializeComponent();
             _mainGame = new(this);
-            _canvas.Children.Add(_mainGame);
             this.ResizeMode = ResizeMode.NoResize;
-            SetDayProgressBar();
-            
+            this.Focusable = true;
+            this.Visibility = Visibility.Visible;
+            _canvas.Children.Add(_mainGame);
+            _mainGame.StartThread();
         }
-        public void SetDayProgressBar()
+        public bool SetDayProgressBar(int n)
         {
-            _dayProgressBar.Value = 60;
+            if (n % 10 == 0) {
+                _progressBarValue += 1;
+                if (_progressBarValue != 100)
+                {
+                    _dayProgressBar.Value = _progressBarValue;
+                    return false;
+                } else
+                {
+                    _progressBarValue = 0;
+                    _dayProgressBar.Value = 0;
+                    return true;
+                }
+            }
+            return false;       
         }
 
         private void ExitBtn_Click(object sender, RoutedEventArgs e)

@@ -18,7 +18,7 @@ namespace Loop_Hero_GUI.Cards
         public Card(int index) 
         { 
             PositionX = index * CARD_SIZEX + 50;
-            PositionY = 550;
+            PositionY = 520;
         }
 
         public Card()
@@ -38,8 +38,5 @@ namespace Loop_Hero_GUI.Cards
         public abstract string GetCardName();
 
         public abstract List<IEntity> NewDay(List<IEntity> enemies);
-
-
-
     }
 }

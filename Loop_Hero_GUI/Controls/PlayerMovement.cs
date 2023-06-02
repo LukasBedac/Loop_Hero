@@ -29,8 +29,8 @@ namespace Loop_Hero_GUI.Controls
             }
             if (_player.Movement && mapForMovement != null)
             {
-                int positionX = _player.PositionX - mapForMovement[_index]?.PositionX ?? 0;
-                int positionY = _player.PositionY - mapForMovement[_index]?.PositionY ?? 0;
+                int positionX = _player.PositionX - 90 - mapForMovement[_index]?.PositionX ?? 0;
+                int positionY = _player.PositionY - 90 - mapForMovement[_index]?.PositionY ?? 0;
                 if (positionX == 0 && positionY == 0) 
                 {
                     if (mapForMovement[_index]?.Enemies != null && mapForMovement[_index]?.Enemies?.Count > 0 &&

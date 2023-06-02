@@ -37,10 +37,11 @@ namespace Loop_Hero_GUI.Tiles
 
         public virtual List<IEntity>? Enemies { get => enemies; set => enemies = value; }
 
-        public virtual void SetImage() => _image = new BitmapImage(new Uri("RoadTile.png"));
+        public abstract void SetImage();
 
         public virtual void DrawImage(DrawingContext dc)
         {
+            _image = new BitmapImage(new Uri("../../../Properties/tiles/RoadTile.png", UriKind.Relative));
             dc.DrawImage(_image, new Rect(PositionX, PositionY, TILE_SIZE, TILE_SIZE));
         }
 

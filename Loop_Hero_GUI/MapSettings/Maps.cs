@@ -35,7 +35,7 @@ namespace Loop_Hero_GUI.MapSettings
             int mapNumber = RandomGen.Next(1, 3);
             try
             {
-                using StreamReader? map = new("Mapa" + mapNumber + ".txt");
+                using StreamReader? map = new("../../../Properties/maps/Mapa" + mapNumber + ".txt");
                 int row = 0;
                 int col = 0;
                 while (col < COLUMNS && row < ROWS)
@@ -50,19 +50,16 @@ namespace Loop_Hero_GUI.MapSettings
                             MapInt[row, col] = mapNumbers;
                             col++;
                         }
-                        else
-                        {
-                            return;
-                        }
+                        
                     }
                     if (col == COLUMNS)
                     {
                         col = 0;
                         row++;
                     }
-                    map?.Close();
-
                 }
+                map?.Close();
+                BooleanMapTransfer();
             }
             catch (Exception ex)
             {

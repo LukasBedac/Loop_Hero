@@ -29,12 +29,12 @@ namespace Loop_Hero_GUI
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromMilliseconds(10);
             _timer.Tick += Timer_Tick;
+            _timer.Start();
             _mainWindow = mainWindow;
             ThreadUp = false;
             NewDay = false;
             _map = new MapDrawer();
             Player = new(_map.StarterTile[1], _map.StarterTile[0]);
-            this.MouseLeftButtonDown += MainGame_MouseLeftButtonDown;
         }
 
         private void MainGame_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -87,14 +87,17 @@ namespace Loop_Hero_GUI
 
         private void Timer_Tick(object? sender, EventArgs e)
         {
-           while(ThreadUp)
+            int progressBarCounter = 0;
+            while(ThreadUp)
             {
                 this.InvalidateVisual();
-                if (_clickedCard == null)
+                _mainWindow?.InvalidateVisual();
+                this.MouseLeftButtonDown += MainGame_MouseLeftButtonDown;
+                if (_clickedCard == null && _mainWindow != null)
                 {
-                    //TODO 1.0
-                    //progressBarCounter += (progressBarCounter <= 100) ? 1 : -100;
-                    //NewDay = _mainWindow.SetDayProgressBar(progressBarCounter);                   
+                    
+                    progressBarCounter += (progressBarCounter <= 100) ? 1 : -100;
+                    NewDay = _mainWindow.SetDayProgressBar(progressBarCounter);                   
                 }
                 if (_map != null)
                 {
@@ -120,8 +123,7 @@ namespace Loop_Hero_GUI
 
         public void StartThread()
         {
-            
-            _timer.Start();
+            ThreadUp = true;
         }
 
         public void ResumeThread()

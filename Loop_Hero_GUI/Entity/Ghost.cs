@@ -24,7 +24,7 @@ namespace Loop_Hero_GUI.Entity
         {
             _Hp = 120;
             _Dmg = 9;
-            _Image = new BitmapImage(new Uri("duch.png", UriKind.Relative));
+            _Image = new BitmapImage(new Uri("../../../Properties/entity/duch.png", UriKind.Relative));
             _Item = base.GenerateItem();
         }
 
