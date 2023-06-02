@@ -24,13 +24,13 @@ namespace Loop_Hero_GUI.Entity
         {
             _Hp = 120;
             _Dmg = 9;
-            _Image = new BitmapImage(new Uri("Properties/entity/duch.png"));
+            _Image = new BitmapImage(new Uri("duch.png", UriKind.Relative));
             _Item = base.GenerateItem();
         }
 
-        public int Hp { get => _Hp; init => _Hp += value; }
+        public int Hp { get => _Hp; set => _Hp += value; }
         
-        public int Dmg { get =>_Dmg; init => _Dmg += value; }
+        public int Dmg { get =>_Dmg; set => _Dmg += value; }
         
         public string Name { get => "Ghost"; }
         

@@ -21,9 +21,12 @@ namespace Loop_Hero_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainGame? _mainGame;
         public MainWindow()
         {
             InitializeComponent();
+            _mainGame = new(this);
+            _canvas.Children.Add(_mainGame);
             this.ResizeMode = ResizeMode.NoResize;
             SetDayProgressBar();
             
@@ -32,20 +35,7 @@ namespace Loop_Hero_GUI
         {
             _dayProgressBar.Value = 60;
         }
-        
-        public void Run()
-        {
-            while(true)
-            {
-                
-            }
-        }
 
-        protected override void OnRender(DrawingContext drawingContext)
-        {
-
-            base.OnRender(drawingContext);
-        }
         private void ExitBtn_Click(object sender, RoutedEventArgs e)
         {
             Menu menu = new();

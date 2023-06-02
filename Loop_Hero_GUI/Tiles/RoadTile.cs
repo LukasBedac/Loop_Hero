@@ -27,7 +27,7 @@ namespace Loop_Hero_GUI.Tiles
             _random = new Random();
             if (_random.NextDouble() > 0.85)
             {
-                //TODO 2.1 _enemies.Add(new Slime());
+                _enemies.Add(new Slime());
             }
         }
 
@@ -43,18 +43,20 @@ namespace Loop_Hero_GUI.Tiles
 
         public override string? TileName { get; set; }
 
+        public override List<IEntity>? Enemies { get => _enemies; set => _enemies = value; }
+
         public override int NewDay(bool novyDen)
         {
             
-            if (UsedCard != null && novyDen)
+            if (UsedCard != null && novyDen && _enemies != null)
             {
-                //TODO 2.0 _enemies = UsedCard.NovyDen(_enemies);
+                _enemies = UsedCard.NewDay(_enemies);
             }
             else
             {
                 if (novyDen && _random?.NextDouble() > 0.7 && _enemies?.Count < 4)
                 {
-                    //TODO 2.1 _enemies.Add(new Slime());
+                    _enemies.Add(new Slime());
                     UpdateEnemies(novyDen);
                     return 1;
                 }
@@ -68,21 +70,20 @@ namespace Loop_Hero_GUI.Tiles
             {
                 foreach (IEntity enemy in _enemies)
                 {
-                    //TODO 2.2 enemies HP and DMG
-                    //enemy.SetHp(10);
-                    //enemy.SetDMG(1);
+                    enemy.Hp = 10;
+                    enemy.Dmg = 1;
                 }
             }
         }
 
-        public override void SetImage() => _image = new BitmapImage(new Uri("/Properties/tiles/RoadTile.png"));
+        public override void SetImage() => _image = new BitmapImage(new Uri("tiles/RoadTile.png", UriKind.Relative));
         
         public override void DrawImage(DrawingContext dc)
         {
             base.DrawImage(dc);
             if (UsedCard != null)
             {
-                //TODO 2.3 UsedCard.DrawTileImage(dc, PositionX, PositionY, TILE_SIZE, TILE_SIZE);
+                UsedCard.DrawTileImage(dc, PositionX, PositionY, TILE_SIZE);
             }
             if (_enemies != null && _enemies.Count > 0)
             {
@@ -91,10 +92,10 @@ namespace Loop_Hero_GUI.Tiles
                 {
                     if (i == 2)
                     {
-                        //TODO 2.4 enemy.DrawImage(dc, PositionX + (i * 10), PositionY + (i * 25));
+                        enemy.DrawImage(dc, PositionX + (i * 10), PositionY + (i * 25));
                         return;
                     }
-                    //enemy.DrawImage(dc, PositionX + (i * 30), PositionY);
+                    enemy.DrawImage(dc, PositionX + (i * 30), PositionY);
                     i++;
                 }
             }

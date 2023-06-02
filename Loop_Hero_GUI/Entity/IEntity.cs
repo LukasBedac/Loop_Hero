@@ -13,9 +13,9 @@ namespace Loop_Hero_GUI.Entity
     {
         string Name { get; }
 
-        int Hp { get; init; }
+        int Hp { get; set; }
 
-        int Dmg { get; init; }
+        int Dmg { get; set; }
 
         BitmapImage Image {  get; set; }
 

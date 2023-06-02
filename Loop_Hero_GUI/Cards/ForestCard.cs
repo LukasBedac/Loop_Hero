@@ -31,7 +31,7 @@ namespace Loop_Hero_GUI.Cards
             dc.DrawImage(_image, new Rect(PositionX, PositionY, CARD_SIZEX, CARD_SIZEY));
         }
 
-        public override void DrawTIleImage(DrawingContext dc, int x, int y, int size)
+        public override void DrawTileImage(DrawingContext dc, int x, int y, int size)
         {
             dc.DrawImage(_tileImage, new Rect(x, y, size, size));
         }
@@ -45,7 +45,7 @@ namespace Loop_Hero_GUI.Cards
         {
             if (enemies.Count < 3)
             {
-                //TODO 3.0 enemies.Add(new Zombie());
+                enemies.Add(new Zombie());
                 return enemies;
             }
             return enemies;
@@ -53,8 +53,8 @@ namespace Loop_Hero_GUI.Cards
 
         public override void SetImage()
         {
-            _image = new BitmapImage(new Uri("/Properties/cards/ForestCard.png"));
-            _tileImage = new BitmapImage(new Uri("/Properties/tiles/Forest.png"));
+            _image = new BitmapImage(new Uri("ForestCard.png"));
+            _tileImage = new BitmapImage(new Uri("Forest.png"));
         }
     }
 }

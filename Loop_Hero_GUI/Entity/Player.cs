@@ -1,5 +1,7 @@
 ﻿using Loop_Hero_GUI.Cards;
+using Loop_Hero_GUI.Controls;
 using Loop_Hero_GUI.Items;
+using Loop_Hero_GUI.MapSettings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,32 +18,39 @@ namespace Loop_Hero_GUI.Entity
 
         private int _Dmg;
 
-        private BitmapImage _Image;
+        private BitmapImage _image;
 
         private List<Card>? _cards;
 
         private List<Item>? _items;
 
+        private PlayerMovement _movement;
+
         private Card? _clickedCard;
 
-        public Player() 
+        private int _actualTileIndex;
+
+        public Player(int x, int y) 
         {
             _Hp = 100;
             _Dmg = 15;
-            _Image = new BitmapImage(new Uri("Propertes/entity/player.png"));
+            PositionX = x;
+            PositionY = y;
+            _image = new BitmapImage(new Uri("player.png"));
             _cards = new List<Card>();
             _items = new List<Item>();
-            //TODO 4.0 Movement class 
+            Movement = true;
+            _movement = new(this);
             SetStartingCards();
         }
-
+        #region Properties
         public string Name => throw new NotImplementedException();
 
-        public int Hp { get => _Hp; init => _Hp = value; }
+        public int Hp { get => _Hp; set => _Hp = value; }
 
-        public int Dmg { get => _Dmg; init => _Dmg = value; }
+        public int Dmg { get => _Dmg; set => _Dmg = value; }
         
-        public BitmapImage Image { get => _Image; set => _Image = value; }
+        public BitmapImage Image { get => _image; set => _image = value; }
 
         public int PositionX { get; set; }
         
@@ -50,9 +59,12 @@ namespace Loop_Hero_GUI.Entity
         public bool Fight { get; set; }
 
         public bool Movement { get; set; }
+
+        public int ActualTileIndex { get => _actualTileIndex; set => _actualTileIndex = value; }
+        #endregion Properties
         public void DrawImage(DrawingContext dc, int x, int y)
         {
-            dc.DrawImage(_Image, new System.Windows.Rect(x, y, 48, 48));
+            dc.DrawImage(_image, new System.Windows.Rect(x, y, 48, 48));
             if (_cards != null )
             {
                 foreach (Card card in _cards)
@@ -118,7 +130,7 @@ namespace Loop_Hero_GUI.Entity
             }
             return tempCards;
         }
-        public Card? CardOnClick(int x, int y)
+        public Card? CardOnClick(double x, double y)
         {
             if (_cards != null)
             {
@@ -146,7 +158,34 @@ namespace Loop_Hero_GUI.Entity
         #endregion Cards
 
         #region Movement
-        //TODO 4.1 Movement
+        public void ActivateMovement(MapDrawer map)
+        {
+            switch(_movement.Movement(map))
+            {
+                case "up":
+                    MoveVertically(-1);
+                    break;
+                case "down": 
+                    MoveVertically(1);
+                    break;
+                case "right":
+                    MoveHorizontally(1);
+                    break;
+                case "left":
+                    MoveHorizontally(-1);
+                    break;
+            }
+        }
+
+        private void MoveVertically(int y)
+        {
+            PositionY += y;
+        }
+
+        private void MoveHorizontally(int x)
+        {
+            PositionX += x;
+        }
         #endregion Movement
     }
 }

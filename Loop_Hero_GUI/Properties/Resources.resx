@@ -121,6 +121,30 @@
   <data name="Bacjground" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bacjground.jpg;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="CampFire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>tiles\CampFire.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CampFireCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>cards\CampFireCard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Cemetery" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>tiles\Cemetery.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="CemeteryCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>cards\CemeteryCard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>entity\chest.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="duch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>entity\duch.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Forest" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>tiles\Forest.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ForestCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>cards\ForestCard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -129,5 +153,26 @@
   </data>
   <data name="Mapa2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>maps\Mapa2.txt;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1250</value>
+  </data>
+  <data name="player" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>entity\player.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RoadCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>cards\RoadCard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="RoadTile" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>tiles\RoadTile.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="slime" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>entity\slime.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Treasure" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>tiles\Treasure.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TreasureCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>cards\TreasureCard.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="zombie" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>entity\zombie.png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

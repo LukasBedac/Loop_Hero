@@ -16,7 +16,7 @@ using Loop_Hero_GUI.Tiles;
 
 namespace Loop_Hero_GUI.MapSettings
 {
-    partial class MapDrawer
+    public class MapDrawer
     {
         public const int TILE_SIZE = 60;
 
@@ -32,6 +32,10 @@ namespace Loop_Hero_GUI.MapSettings
             InGameMap = new Tile[Maps.ROWS, Maps.COLUMNS];
             RandomGen = new Random();
             StarterTile = new int[2];
+            CalculatedMap = new();
+            bool[,] map= _mapGenerator.MapBool;
+            FillMap(map);
+            SetCampfire();
         }
 
         public Random RandomGen { get; init; }
@@ -41,12 +45,7 @@ namespace Loop_Hero_GUI.MapSettings
         public int[] StarterTile { get; set; }
         public List<Tile?>? CalculatedMap { get; set; }
 
-        public int[]? GetStarterTile()
-        {
-            return StarterTile;
-        }
-
-        public void SetCampfire(int v)
+        public void SetCampfire()
         {
             int row = RandomGen.Next(Maps.ROWS);
             int col = RandomGen.Next(Maps.COLUMNS);
@@ -179,7 +178,7 @@ namespace Loop_Hero_GUI.MapSettings
             }
         }
 
-        public bool ForwardClickedCardToTile(Card card, int x, int y)
+        public bool ForwardClickedCardToTile(Card card, double x, double y)
         {
             if (CalculatedMap != null)
             {

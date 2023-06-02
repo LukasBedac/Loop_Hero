@@ -73,6 +73,86 @@ namespace Loop_Hero_GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] CampFire {
+            get {
+                object obj = ResourceManager.GetObject("CampFire", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] CampFireCard {
+            get {
+                object obj = ResourceManager.GetObject("CampFireCard", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Cemetery {
+            get {
+                object obj = ResourceManager.GetObject("Cemetery", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] CemeteryCard {
+            get {
+                object obj = ResourceManager.GetObject("CemeteryCard", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] chest {
+            get {
+                object obj = ResourceManager.GetObject("chest", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] duch {
+            get {
+                object obj = ResourceManager.GetObject("duch", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Forest {
+            get {
+                object obj = ResourceManager.GetObject("Forest", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] ForestCard {
+            get {
+                object obj = ResourceManager.GetObject("ForestCard", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] Icon {
             get {
                 object obj = ResourceManager.GetObject("Icon", resourceCulture);
@@ -109,6 +189,76 @@ namespace Loop_Hero_GUI.Properties {
         public static string Mapa2 {
             get {
                 return ResourceManager.GetString("Mapa2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] player {
+            get {
+                object obj = ResourceManager.GetObject("player", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] RoadCard {
+            get {
+                object obj = ResourceManager.GetObject("RoadCard", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] RoadTile {
+            get {
+                object obj = ResourceManager.GetObject("RoadTile", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] slime {
+            get {
+                object obj = ResourceManager.GetObject("slime", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Treasure {
+            get {
+                object obj = ResourceManager.GetObject("Treasure", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] TreasureCard {
+            get {
+                object obj = ResourceManager.GetObject("TreasureCard", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] zombie {
+            get {
+                object obj = ResourceManager.GetObject("zombie", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }

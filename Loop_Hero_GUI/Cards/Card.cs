@@ -33,7 +33,7 @@ namespace Loop_Hero_GUI.Cards
 
         public abstract void DrawImage(DrawingContext dc);
 
-        public abstract void DrawTIleImage(DrawingContext dc, int x, int y, int size);
+        public abstract void DrawTileImage(DrawingContext dc, int x, int y, int size);
 
         public abstract string GetCardName();
 
