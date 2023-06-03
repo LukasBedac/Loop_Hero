@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -72,6 +73,16 @@ namespace Loop_Hero_GUI.Entity
                     card.DrawImage(dc);
                 }
             }            
+        }
+        public void StartFight(MapDrawer map, MainGame game, MainWindow window, ListBox listBox)
+        {
+            List<IEntity>? enemies = map.CalculatedMap?[_actualTileIndex]?.Enemies;
+            if ( enemies != null ) 
+            {
+                Fight fight = new(this, enemies, game, window, listBox);
+            }
+            Fight = false;
+
         }
         #region Cards
         private void SetStartingCards()

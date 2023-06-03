@@ -24,6 +24,10 @@ namespace Loop_Hero_GUI
         private MainGame? _mainGame;
 
         private int _progressBarValue;
+
+        private int _day;
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,6 +37,7 @@ namespace Loop_Hero_GUI
             this.Visibility = Visibility.Visible;
             _canvas.Children.Add(_mainGame);
             _mainGame.StartThread();
+            _day = 1;
         }
         public bool SetDayProgressBar(int n)
         {
@@ -44,8 +49,10 @@ namespace Loop_Hero_GUI
                     return false;
                 } else
                 {
+                    _day += 1;
+                    _DayCount.Text = "Day: " + _day;
                     _progressBarValue = 0;
-                    _dayProgressBar.Value = 0;
+                    _dayProgressBar.Value = _progressBarValue;
                     return true;
                 }
             }
@@ -57,17 +64,26 @@ namespace Loop_Hero_GUI
             Menu menu = new();
             this.Close();
             menu.Show();
-
         }
 
         private void PauseBtn_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (!_mainGame?.ThreadUp ?? true)
+            {
+                _mainGame?.StopThread();
+                _pauseBtn.IsEnabled = false;
+                _resumeBtn.IsEnabled = true;
+            }
         }
 
-        private void SaveBtn_Click(object sender, RoutedEventArgs e)
+        private void ResumeBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            if (_mainGame?.ThreadUp ?? false)
+            {
+                _mainGame?.StartThread();
+                _resumeBtn.IsEnabled = false;
+                _pauseBtn.IsEnabled = true;
+            }
         }
     }
     

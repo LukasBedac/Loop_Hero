@@ -24,16 +24,20 @@ namespace Loop_Hero_GUI
 
         private Card? _clickedCard;
 
+        private int _progressBarCounter;
+
         public MainGame(MainWindow mainWindow) 
         {
             _timer = new DispatcherTimer();
             _timer.Tick += Timer_Tick;
-
             _mainWindow = mainWindow;
             ThreadUp = false;
             NewDay = false;
             _map = new MapDrawer();
             Player = new(_map.StarterTile[1], _map.StarterTile[0]);
+            this.MouseLeftButtonDown += MainGame_MouseLeftButtonDown;
+            _progressBarCounter = 0;
+
         }
 
         private void MainGame_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -41,7 +45,7 @@ namespace Loop_Hero_GUI
             if (_clickedCard == null && Player?.CardOnClick(e.GetPosition(this).X, e.GetPosition(this).Y) != null)
             {
                 _clickedCard = Player.CardOnClick(e.GetPosition(this).X, e.GetPosition(this).Y);
-                Player.Movement = true;
+                Player.Movement = false;
                 Highlighted = true;
             } else
             {
@@ -81,21 +85,16 @@ namespace Loop_Hero_GUI
                 _map?.ClickedCardDraw(dc);
             }
             Player?.DrawImage(dc, Player.PositionX, Player.PositionY);
-            InvalidateVisual();
+            this.InvalidateVisual();
         }
 
         private void Timer_Tick(object? sender, EventArgs e)
         {
-            _timer.Interval = TimeSpan.FromMilliseconds(1);
-            int progressBarCounter = 0;                    
-            this.InvalidateVisual();
-            _mainWindow?.InvalidateVisual();
-            this.MouseLeftButtonDown += MainGame_MouseLeftButtonDown;
+            _timer.Interval = TimeSpan.FromMilliseconds(10);
             if (_clickedCard == null && _mainWindow != null)
             {
-                    
-                progressBarCounter += (progressBarCounter <= 100) ? 1 : -100;
-                NewDay = _mainWindow.SetDayProgressBar(progressBarCounter);                   
+                _progressBarCounter += (_progressBarCounter <= 100) ? 1 : -100;
+                NewDay = _mainWindow.SetDayProgressBar(_progressBarCounter);                   
             }
             if (_map != null)
             {
@@ -108,26 +107,37 @@ namespace Loop_Hero_GUI
             }
             if (Player != null && !ThreadUp && Player.Fight)
             {
-                //TODO Fight
+                StopThread();
+                if (_map != null && _mainWindow != null && _mainWindow._listBox != null) 
+                {
+                Player.StartFight(_map, this, _mainWindow, _mainWindow._listBox);
+
+                }
                 ResumeThread();
             }
+            InvalidateVisual();
+
         }
 
         public void StopThread()
         {
             ThreadUp = false;
+            _timer.Tick += null;
+            _timer.Stop();
         }
 
         public void StartThread()
         {
             ThreadUp = true;
+            _timer.Tick += Timer_Tick;
             _timer.Start();
-
         }
 
         public void ResumeThread()
         {
             ThreadUp = true;
+            _timer.Tick += null;
+            _timer.Start();
         }
     }
 }

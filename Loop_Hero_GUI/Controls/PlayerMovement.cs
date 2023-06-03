@@ -34,10 +34,10 @@ namespace Loop_Hero_GUI.Controls
                 if (positionX == 0 && positionY == 0) 
                 {
                     if (mapForMovement[_index]?.Enemies != null && mapForMovement[_index]?.Enemies?.Count > 0 &&
-                        !_player.Movement) 
+                        !_player.Fight) 
                         {
-                            _player.Movement = true;
-                        _player.ActualTileIndex = _index;
+                            _player.Fight = true;
+                            _player.ActualTileIndex = _index;
                         }
                     _index++;
                 }
