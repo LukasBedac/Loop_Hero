@@ -53,8 +53,12 @@
     <Resource Include="Properties\entity\player.png" />
     <Resource Include="Properties\entity\slime.png" />
     <Resource Include="Properties\entity\zombie.png" />
-    <Resource Include="Properties\images\Zvyraznenie.png" />
-    <Resource Include="Properties\images\ZvyraznenieC.png" />
+    <Resource Include="Properties\images\Zvyraznenie.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Properties\images\ZvyraznenieC.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Properties\maps\Mapa1.txt" />
     <Resource Include="Properties\tiles\CampFire.png" />
     <Resource Include="Properties\tiles\Cemetery.png" />
@@ -64,7 +68,6 @@
     </Resource>
     <Resource Include="Properties\tiles\Treasure.png" />
     <Resource Include="Resources\Bacjground.jpg" />
-    <Resource Include="Resources\CampFire.png" />
   </ItemGroup>
 
   <ItemGroup>

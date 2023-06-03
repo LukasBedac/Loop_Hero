@@ -261,5 +261,25 @@ namespace Loop_Hero_GUI.Properties {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] Zvyraznenie {
+            get {
+                object obj = ResourceManager.GetObject("Zvyraznenie", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        public static byte[] ZvyraznenieC {
+            get {
+                object obj = ResourceManager.GetObject("ZvyraznenieC", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

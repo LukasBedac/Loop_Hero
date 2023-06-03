@@ -151,8 +151,8 @@ namespace Loop_Hero_GUI.MapSettings
         {
             try
             {
-                BitmapImage border = new(new Uri("../../../Properties/images/Zvyraznenie.png"));
-                BitmapImage redBorder = new(new Uri("../../../Properties/images/ZvyraznenieC.png"));
+                BitmapImage border = new(new Uri("../../../Properties/images/Zvyraznenie.png", UriKind.Relative));
+                BitmapImage redBorder = new(new Uri("../../../Properties/images/ZvyraznenieC.png", UriKind.Relative));
                 if (CalculatedMap != null)
                 {
                     foreach (Tile? tile in CalculatedMap)

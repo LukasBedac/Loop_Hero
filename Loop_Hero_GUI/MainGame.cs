@@ -27,9 +27,8 @@ namespace Loop_Hero_GUI
         public MainGame(MainWindow mainWindow) 
         {
             _timer = new DispatcherTimer();
-            _timer.Interval = TimeSpan.FromMilliseconds(10);
             _timer.Tick += Timer_Tick;
-            _timer.Start();
+
             _mainWindow = mainWindow;
             ThreadUp = false;
             NewDay = false;
@@ -87,28 +86,26 @@ namespace Loop_Hero_GUI
 
         private void Timer_Tick(object? sender, EventArgs e)
         {
-            int progressBarCounter = 0;
-            while(ThreadUp)
+            _timer.Interval = TimeSpan.FromMilliseconds(1);
+            int progressBarCounter = 0;                    
+            this.InvalidateVisual();
+            _mainWindow?.InvalidateVisual();
+            this.MouseLeftButtonDown += MainGame_MouseLeftButtonDown;
+            if (_clickedCard == null && _mainWindow != null)
             {
-                this.InvalidateVisual();
-                _mainWindow?.InvalidateVisual();
-                this.MouseLeftButtonDown += MainGame_MouseLeftButtonDown;
-                if (_clickedCard == null && _mainWindow != null)
-                {
                     
-                    progressBarCounter += (progressBarCounter <= 100) ? 1 : -100;
-                    NewDay = _mainWindow.SetDayProgressBar(progressBarCounter);                   
-                }
-                if (_map != null)
-                {
-                    Player?.ActivateMovement(_map);
-                }
-                if (Player != null && Player.Fight && _map != null)
-                {
-                    StopThread();
-                    Player.ActivateMovement(_map);
-                }
-            } 
+                progressBarCounter += (progressBarCounter <= 100) ? 1 : -100;
+                NewDay = _mainWindow.SetDayProgressBar(progressBarCounter);                   
+            }
+            if (_map != null)
+            {
+                Player?.ActivateMovement(_map);
+            }
+            if (Player != null && Player.Fight && _map != null)
+            {
+                StopThread();
+                Player.ActivateMovement(_map);
+            }
             if (Player != null && !ThreadUp && Player.Fight)
             {
                 //TODO Fight
@@ -124,6 +121,8 @@ namespace Loop_Hero_GUI
         public void StartThread()
         {
             ThreadUp = true;
+            _timer.Start();
+
         }
 
         public void ResumeThread()
