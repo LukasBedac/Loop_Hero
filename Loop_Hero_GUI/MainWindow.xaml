@@ -12,12 +12,16 @@
             <Canvas Name="_canvas" Width="800" Height="450" Margin="-1,33,-1,-1"/>
         </Border>
         <Border BorderBrush="#587596" BorderThickness="1" Margin="783,0,0,300">
-            <ListBox x:Name="_listBox" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#1E2019" Foreground="White" Width="300" Height="300"/>
+            <ListBox x:Name="_listBox" d:ItemsSource="{d:SampleData ItemCount=5}" Background="#1E2019" Foreground="White" Width="385" Height="350" Margin="5,90,10,20"/>
         </Border>
         <Border BorderBrush="#587596" BorderThickness="1" Margin="0,462,0,0"/>
         <Button Content="Exit"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,0,0" Width="75" Height="25" Click="ExitBtn_Click"/>
         <Button x:Name="_pauseBtn" Content="Pause" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,75,0" Width="75" Height="25" Click="PauseBtn_Click"/>
         <Button x:Name="_resumeBtn" Content="Resume"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,150,0" Width="75" Height="25" Click="ResumeBtn_Click"/>
+        <TextBlock x:Name="_playerHPText" HorizontalAlignment="Left" Margin="820,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Foreground="#E2C044" TextAlignment="Center" FontSize="24"/>
+        <ProgressBar x:Name="_playerHPBar" HorizontalAlignment="Left" Height="15" Margin="930,30,0,0" VerticalAlignment="Top" Width="200" Foreground="Green"/>
+        <TextBlock x:Name="_playerDmg" HorizontalAlignment="Left" Margin="820,50,0,0" TextWrapping="Wrap" Text="Damage: 15" VerticalAlignment="Top" Width="130" Foreground="#E2C044" TextAlignment="Center" FontSize="24"/>
+        <TextBlock x:Name="_cardsText" HorizontalAlignment="Left" Margin="50,500,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="20" Foreground="White"/>
 
     </Grid>
 </Window>

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -85,12 +86,19 @@ namespace Loop_Hero_GUI
                 _map?.ClickedCardDraw(dc);
             }
             Player?.DrawImage(dc, Player.PositionX, Player.PositionY);
+            if (_mainWindow != null)
+            {
+                _mainWindow._playerHPText.Text = "HP: " + Player?.Hp.ToString();
+                _mainWindow._playerHPBar.Value = Player!.Hp;
+                _mainWindow._cardsText.Text = $"Maximum number of cards - 9\n Current Number of cards is {Player.Cards?.Count}";
+            }
             this.InvalidateVisual();
         }
 
         private void Timer_Tick(object? sender, EventArgs e)
         {
-            _timer.Interval = TimeSpan.FromMilliseconds(10);
+            //_timer.Interval = TimeSpan.FromMilliseconds(10);
+            Thread.Sleep(10);
             if (_clickedCard == null && _mainWindow != null)
             {
                 _progressBarCounter += (_progressBarCounter <= 100) ? 1 : -100;
@@ -122,21 +130,18 @@ namespace Loop_Hero_GUI
         public void StopThread()
         {
             ThreadUp = false;
-            _timer.Tick += null;
             _timer.Stop();
         }
 
         public void StartThread()
         {
             ThreadUp = true;
-            _timer.Tick += Timer_Tick;
             _timer.Start();
         }
 
         public void ResumeThread()
         {
             ThreadUp = true;
-            _timer.Tick += null;
             _timer.Start();
         }
     }

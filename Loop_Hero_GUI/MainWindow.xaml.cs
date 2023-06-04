@@ -68,7 +68,7 @@ namespace Loop_Hero_GUI
 
         private void PauseBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!_mainGame?.ThreadUp ?? true)
+            if (_mainGame?.ThreadUp ?? true)
             {
                 _mainGame?.StopThread();
                 _pauseBtn.IsEnabled = false;
@@ -78,7 +78,7 @@ namespace Loop_Hero_GUI
 
         private void ResumeBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (_mainGame?.ThreadUp ?? false)
+            if (!_mainGame?.ThreadUp ?? false)
             {
                 _mainGame?.StartThread();
                 _resumeBtn.IsEnabled = false;

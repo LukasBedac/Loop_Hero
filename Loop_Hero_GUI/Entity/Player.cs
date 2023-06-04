@@ -47,7 +47,7 @@ namespace Loop_Hero_GUI.Entity
         #region Properties
         public string Name => throw new NotImplementedException();
 
-        public int Hp { get => _Hp; set => _Hp = value; }
+        public int Hp { get => _Hp; set => _Hp += value; }
 
         public int Dmg { get => _Dmg; set => _Dmg = value; }
         
@@ -60,6 +60,8 @@ namespace Loop_Hero_GUI.Entity
         public bool Fight { get; set; }
 
         public bool Movement { get; set; }
+
+        public List<Card>? Cards { get => _cards; }
 
         public int ActualTileIndex { get => _actualTileIndex; set => _actualTileIndex = value; }
         #endregion Properties
