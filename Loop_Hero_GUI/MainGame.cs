@@ -90,7 +90,7 @@ namespace Loop_Hero_GUI
             {
                 _mainWindow._playerHPText.Text = "HP: " + Player?.Hp.ToString();
                 _mainWindow._playerHPBar.Value = Player!.Hp;
-                _mainWindow._cardsText.Text = $"Maximum number of cards - 9\n Current Number of cards is {Player.Cards?.Count}";
+                _mainWindow._cardsText.Text = $"Maximum number of cards: 10\n Current Number of cards is {Player.Cards?.Count}";
             }
             this.InvalidateVisual();
         }

@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Loop_Hero_GUI.Properties.Resources">
+    <Position X="14.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wAAQIABAAACEAAAAgAABEAQAAQAAAAQBAAoEEAECAII=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.Properties.Settings">
+    <Position X="16.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.Cards.Card">
+    <Position X="4.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAwAgABAAAAEAAAAAAAAAAAAABAAAIAA=</HashCode>
+      <FileName>Cards\Card.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.Cards.CemeteryCard">
+    <Position X="2.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAgAAAAAAAAAAABAAAAEAAAAAQAAAAAAABAAAIAA=</HashCode>
+      <FileName>Cards\CemeteryCard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.Cards.ForestCard">
+    <Position X="4.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAgAAAAAAAAAAABAAAAEAAAAAQAAAAAAABAAAIAA=</HashCode>
+      <FileName>Cards\ForestCard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.Cards.TreasureCard">
+    <Position X="7" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAgAAAAAAAAAAABAAAAEAAAAAQAAAAAAABAAAIAA=</HashCode>
+      <FileName>Cards\TreasureCard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.Controls.PlayerMovement">
+    <Position X="12.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAgCAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\PlayerMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.Entity.Ghost">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAACAgBAAAAAAAAAACAQAAAAAABQAAAAAQAAAQAA=</HashCode>
+      <FileName>Entity\Ghost.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Loop_Hero_GUI.Entity.Loot">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAIAAAE=</HashCode>
+      <FileName>Entity\Loot.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.Entity.Player" BaseTypeListCollapsed="true">
+    <Position X="11" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAIAAIgCAIEAQgBAACCQVIABAARBAABAAAQAAAWAA=</HashCode>
+      <FileName>Entity\Player.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Loop_Hero_GUI.Entity.Slime" BaseTypeListCollapsed="true">
+    <Position X="18.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAgAAAAAAAAAAACAQAAAAAABQAAAAAQAAAQAA=</HashCode>
+      <FileName>Entity\Slime.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Loop_Hero_GUI.Entity.Treasure">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAACAgBAAAAAAAAAACAQAAAAAABQAAAAAQAAAQAA=</HashCode>
+      <FileName>Entity\Treasure.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Loop_Hero_GUI.Entity.Zombie">
+    <Position X="7" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAACAgBAAAAAAAAAACAQAAAAAABQAAAAAQAAAQAA=</HashCode>
+      <FileName>Entity\Zombie.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Loop_Hero_GUI.Items.Item">
+    <Position X="14.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Items\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.MapSettings.MapDrawer">
+    <Position X="12.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAQAAAAAABACIAAAAAAACAgAAEUAwBAFAAA=</HashCode>
+      <FileName>MapSettings\MapDrawer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.MapSettings.Maps">
+    <Position X="14.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACQAAAAgAAAAIAAAIAAAAAAAACBAAAAAAAA=</HashCode>
+      <FileName>MapSettings\Maps.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.Tiles.CampFire">
+    <Position X="5.75" Y="20.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAgAAAAAABAAAAEAAAAAQAAAAAAAAAABAAA=</HashCode>
+      <FileName>Tiles\CampFire.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.Tiles.RoadTile">
+    <Position X="3.5" Y="20.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAACAAAAQgAAAAgABAAAAEAAAEAwAAAAAAAAAABABE=</HashCode>
+      <FileName>Tiles\RoadTile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.Tiles.Tile">
+    <Position X="4.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAACAAAAAgAAAAgABBAAAEAAAEAwgABAAAAAAAFABA=</HashCode>
+      <FileName>Tiles\Tile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.App">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.Fight">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAQAgAAAAAAABCAAAAAAAAAAAAgAAAAEAAAE=</HashCode>
+      <FileName>Fight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.FightWindow" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FightWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Loop_Hero_GUI.MainGame">
+    <Position X="9.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAgAAFAABABAAAQAAAIBAAAgEAAIwAAAAA=</HashCode>
+      <FileName>MainGame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Loop_Hero_GUI.MainWindow" BaseTypeListCollapsed="true">
+    <Position X="11" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAGCAAgAAAEAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Loop_Hero_GUI.Menu" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Menu.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Loop_Hero_GUI.Entity.IEntity">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAgAAAAAAAAAAAAAQAAAAAABAAAAAAAAAAQAA=</HashCode>
+      <FileName>Entity\IEntity.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

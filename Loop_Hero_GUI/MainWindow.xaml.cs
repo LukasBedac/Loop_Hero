@@ -21,7 +21,7 @@ namespace Loop_Hero_GUI
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainGame? _mainGame;
+        private readonly MainGame? _mainGame;
 
         private int _progressBarValue;
 
